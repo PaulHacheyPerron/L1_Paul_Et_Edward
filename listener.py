@@ -1,7 +1,7 @@
 # Ce programme doit être lancé avec les permissions 'root'
 import socket
 
-ip = "206.167.46.234"
+ip = "206.167.46.204"
 port = 420
 
 # Création de l'objet 'socket'
@@ -10,7 +10,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 # Connexion au port local
 s.bind((ip,port))
 
-fd = open("/etc/test/test_serveur.conf", 'r')
+fd = open("/etc/Watchmen/Watchmen_serveur.conf", 'r')
 position = fd.read()
 position2=position.split('\n')
 fd.close()
