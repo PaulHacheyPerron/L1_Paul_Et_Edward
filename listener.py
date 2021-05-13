@@ -19,11 +19,12 @@ fd.close()
 while True:
 # Réception des données et affichage
 	donnees,addr = s.recvfrom(1024)
-	print("Message UDP de", addr, ": ", donnees)
-
+	donnees_tampo = str(donnees)
+	fa = donnees_tampo.split("'")
+	#print(fa[1])
 	f=open(position2[0],'r')
 	file=f.read()
-	file=(file + ("Message UDP de" + str(addr) + ":" + str(donnees) + '\n'))
+	file=(file + (fa[1] + "<br/>"  + '\n'))
 	f.close()
 
 	f=open(position2[0],'w')
